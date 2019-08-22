@@ -19,6 +19,8 @@ para crear un proyecto:
 
 composer create-project --prefer-dist laravel/laravel app.shop
 
+Para iniciar el sistema
+
 php artisan serve
 
 Conceptos:
@@ -106,19 +108,26 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Modificar en archivo .env,
-cambiar la base de datos, nombre de usuario y contraseña
+Github, crear un repositorio
 
-Migraciones:
-php artisan migration
+crear un repositorio local
 
-Version de mysql 
+crear un commit
 
-control de versiones https://git-scm.com/downloads
+subir un commit (push)
 
+git status
 
+git add -A
 
+git commit -m "nombre del proyect"
 
+1- Crear un repositorio en github
+
+git init
+git commit -m "comienzo del proyect"
+git remote add origin master https://github.com/usuario/repo.git
+git push -u origin master
 
 
 
