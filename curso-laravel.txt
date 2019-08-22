@@ -1,0 +1,148 @@
+Laravel
+
+1- Comparacion con otros framework
+
+Instalacion
+
+1- Servidor web local apache
+2- motor base de datos
+3- gestor de base de datos
+4- gestor de paquetes
+
+Ejemplo WAMP o XAMP
+linux lamp
+max mamp
+
+instalar composer
+
+para crear un proyecto:
+
+composer create-project --prefer-dist laravel/laravel app.shop
+
+php artisan serve
+
+Conceptos:
+
+Rutas se asocias con las url, ejemplo
+/home
+/login
+/register
+
+Ejemplo
+
+midominio.com/ruta/index.php  -> esto ya no se usa
+
+Los usuarios finales no deberian ver las carpeas del proyecto
+
+Ejemplo de rutas:
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/prueba', function () { return 'hola mundo'; });
+
+Route::get('/bienvenido', "bienvenidos@hola");
+
+
+Controladores
+
+Son necesarios para mantener el orden
+enviar sms, registrar datos, validar datos, generar dbf
+devolver una vista, realizar un backup, permisos a usuarios
+
+Asocia una ruta con un controlador
+controlador devuelve una vista, mensaje o json
+
+php artisan make:controller TestController
+
+Llamar a la vista welcomo
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class TestController extends Controller
+{
+    //
+    public function welcome() 
+    {
+    	return view('welcome');
+    }
+}
+
+Ejercicio: modificar el controlador TestController
+devolviendo una suma.
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class TestController extends Controller
+{
+    //
+    public function welcome() 
+    {
+    	$a = 100;
+    	$b = 150;
+    	$c = $a + $b;
+    	return 'la suma de $a mas $b es $c'; 
+    }
+}
+
+Laravel genera el sistema de autenticacion
+
+Detener el servidor
+
+Genere la estructura de login
+
+php artisan make:aut
+Crea :
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Modificar en archivo .env,
+cambiar la base de datos, nombre de usuario y contraseña
+
+Migraciones:
+php artisan migration
+
+Version de mysql 
+
+control de versiones https://git-scm.com/downloads
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
